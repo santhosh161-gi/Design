@@ -83,9 +83,9 @@ function Hero  (){
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.8 }}
-      className="absolute -bottom-25 lg:bottom-30 md:bottom-20 lg:left-80 md:left-50
+      className="absolute -bottom-20 lg:bottom-30 md:bottom-20 lg:left-80 md:left-50
                  text-white/80 uppercase font-bold
-                 text-[40px] sm:text-[30px] md:text-[30px] lg:text-[40px]
+                 text-[30px] sm:text-[30px] md:text-[30px] lg:text-[40px]
                  space-y-2 z-100 border-none"
     >
       <div>#Photographer</div>
@@ -120,7 +120,7 @@ function Hero  (){
       {/* LEFT TEXT */}
       <div className="flex-1 uppercase font-extrabold 
                       text-[20px] md:text-[40px] lg:text-[55px] 
-                      leading-[1.3] text-white/50">
+                      leading-[1.3] text-white/50 ">
 
         {[
           "Collaboration is at the",
@@ -134,7 +134,7 @@ function Hero  (){
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="hover:text-white transition-colors duration-300"
+            className="hover:text-white transition-colors duration-300  line-clamp-2 md:line-clamp-4 lg:line-clamp-5 sm:line-clamp-2"
           >
             {text}
           </motion.div>
