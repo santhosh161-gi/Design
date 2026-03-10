@@ -10,7 +10,9 @@ function Pattern() {
     { img: "/Shirts.jpg", name: "Shirts" },
     { img: "/Shorts.jpg", name: "Shorts" },
     { img: "/Sweat Shirts.jpg", name: "Sweat Shirts" },
-    { img: "/Track Pants.jpg", name: "Track Pants" }
+    { img: "/Track Pants.jpg", name: "Track Pants" },
+    { img: "/Co Ord Sets for Women.png", name: "Women Wear" },
+    { img: "/T-Shirts.png", name: "T-Shirts" },
   ];
 
   const loopItems = [...items, ...items];
@@ -19,7 +21,7 @@ function Pattern() {
     <div className="relative">
 
       {/* ---------- DESKTOP MARQUEE ---------- */}
-      <div className="desktop-marquee w-full overflow-hidden py-10">
+      <div className="w-full overflow-hidden py-10">
         <div className="marquee-track">
 
           {loopItems.map((item, i) => (
@@ -73,12 +75,16 @@ function Pattern() {
 .marquee-track {
   display: flex;
   gap: 20px;
-  animation: marquee-x 18s linear infinite;
+  animation: marquee-x 25s linear infinite;
 }
 
 @keyframes marquee-x {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .marquee-track:hover {

@@ -32,7 +32,7 @@ const Collections = () => {
                             transition-all duration-300 ease-in-out">
 
                 <p className="text-white font-bold pb-6 text-md md:text-xl lg:text-[30px] text-center">
-               White Label T-Shirt Manufacturing for Global Retail Brands
+              White Label T-Shirt for Global Retail Brands
                 </p>
 
             </div>
@@ -46,7 +46,7 @@ const Collections = () => {
             transition={{ duration: 0.5, delay: 1.2}}
             >
             <img
-                src="/car1.webp"
+                src="/MNCs.jpg"
                 alt=""
                 className="rounded-2xl w-full h-auto"
             />
@@ -58,7 +58,7 @@ const Collections = () => {
                             transition-all duration-300 ease-in-out">
 
                 <p className="text-white font-bold pb-6 text-2xl md:text-3xl lg:text-[30px] text-center">
-               Trusted by Fortune 500 Companies for Corporate T-Shirts & Events
+              Corporate T-Shirts for MNCs and Events
                 </p>
 
             </div>
@@ -72,7 +72,7 @@ const Collections = () => {
             transition={{ duration: 0.5, delay: 1.4}}   
             >   
             <img
-                src="/car2.webp"
+                src="/schools.jpg"
                 alt=""
                 className="rounded-2xl w-full h-auto"
             />
@@ -84,7 +84,7 @@ const Collections = () => {
                             transition-all duration-300 ease-in-out">
 
                 <p className="text-white font-bold pb-6 text-md md:text-xl lg:text-[30px] text-center">
-                Bulk Institutional Clothing Supplier for Schools, Corporates & Events
+               Bulk Institutional Clothing Supplier for Schools and Colleges
                 </p>
 
             </div>
@@ -98,7 +98,7 @@ const Collections = () => {
             transition={{ duration: 0.5, delay: 1.6}}   
             >       
             <img
-                src="/car.jpg"
+                src="/startups.jpg"
                 alt=""
                 className="rounded-2xl w-full h-auto object-fit-cover"
             />
@@ -110,7 +110,7 @@ const Collections = () => {
                             transition-all duration-300 ease-in-out">
 
                 <p className="text-white font-bold pb-6 text-md md:text-xl lg:text-[30px] text-center">
-                T-Shirt Manufacturing for Lifestyle & Startup Brands
+               T-Shirts for Lifestyle & Startup Brands
                 </p>
 
             </div>

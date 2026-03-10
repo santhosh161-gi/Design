@@ -1,6 +1,9 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import Button from '../animation/Button';
+import TextScroll from '../animation/Textscroll';
+
+
 
 function Hero  (){
   return (
@@ -68,8 +71,11 @@ function Hero  (){
      </div>
      </div>
 
+<div>
+  <TextScroll />
+</div>
   <div className=" px-4 md:px-10 md:ml-10">
-  <div className="bg-black min-h-screen px-6 md:px-12 lg:px-24 py-10 md:py-20 lg:py-60">
+  <div className="bg-black min-h-screen px-6 md:px-12 lg:px-24 py-10 md:py-20 lg:py-30">
 
     {/* Responsive Flex */}
     <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">

@@ -79,3 +79,16 @@ button:focus-visible {
   animation: scrollRight 40s linear infinite;
 
 }
+.scroll-text{
+  animation: scrollText 18s linear infinite;
+}
+
+@keyframes scrollText{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+

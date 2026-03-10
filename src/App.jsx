@@ -31,19 +31,18 @@ function HomePage() {
       <div className='w-full overflow-hidden'>
         <Pattern />
       </div>
-
-      <section id="fabrics">
-        <Visual />
-      </section>
-
       <div><hr className='border-white/20'/></div>
 
-      <div className='w-full overflow-hidden'>
+      {/* <div className='w-full overflow-hidden'>
         <Pattern />
-      </div>
+      </div> */}
 
       <section id="customization">
         <Creative />
+      </section>
+      
+       <section id="fabrics">
+        <Visual />
       </section>
 
       <section id="fabrics-carousel">
