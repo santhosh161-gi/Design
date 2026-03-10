@@ -76,6 +76,6 @@ button:focus-visible {
 .scroll-container {
   display: flex;
   width:max-content;
-  animation: scrollRight 20s linear infinite;
+  animation: scrollRight 40s linear infinite;
 
 }

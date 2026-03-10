@@ -22,7 +22,7 @@ function Hero  (){
         </p>
 
         <p className="text-white opacity-50 mt-4 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] uppercase leading-relaxed">
-          Varthagam International is your strategic partner for large-scale,
+         Hemelo Cotton Global is your strategic partner for large-scale,
           premium T-shirt manufacturing in India. We specialize in custom
           T-shirt production, private label apparel, bulk orders, and
           corporate clothing solutions. Trusted by Fortune 500 companies,
@@ -125,7 +125,7 @@ function Hero  (){
         >
 
           <p className="text-white/50 text-sm md:text-base 
-                        uppercase leading-relaxed tracking-wide line-clamp-3">
+                        uppercase leading-relaxed tracking-wide line-clamp-5">
             From basics to fashion-forward fits, Hemelo Cotton manufactures a wide range of premium-quality apparel. Whether you’re launching a streetwear brand, building a corporate uniform line, or stocking up for an event — we’ve got you covered. If it’s made from fabric, we can make it for you.
           </p>
 

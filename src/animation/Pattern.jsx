@@ -13,11 +13,13 @@ function Pattern() {
     { img: "/Track Pants.jpg", name: "Track Pants" }
   ];
 
-  const loopItems = [...items, ...items, ...items];
+  const loopItems = [...items, ...items];
 
   return (
     <div className="relative">
-      <div className="w-full overflow-hidden flex items-center py-10">
+
+      {/* ---------- DESKTOP MARQUEE ---------- */}
+      <div className="desktop-marquee w-full overflow-hidden py-10">
         <div className="marquee-track">
 
           {loopItems.map((item, i) => (
@@ -33,10 +35,9 @@ function Pattern() {
                 }}
               />
 
-              {/* Title */}
-              <div className="absolute top-85% left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold bg-black/40 px-3 py-1 rounded">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xl font-bold bg-black/40 px-3 py-1 rounded">
                 {item.name}
-              </div>  
+              </div>
 
             </div>
           ))}
@@ -44,23 +45,103 @@ function Pattern() {
         </div>
       </div>
 
-      <style>{`
-        .marquee-track {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          animation: marquee-x 18s linear infinite;
-        }
 
-        @keyframes marquee-x {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
+      {/* ---------- MOBILE SCROLL CAROUSEL ---------- */}
+      <div className="mobile-carousel">
 
-        .marquee-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+        {items.map((item, i) => (
+          <div key={i} className="carousel-item">
+
+            <img
+              src={item.img}
+              alt={item.name}
+              className="carousel-img"
+            />
+
+            <div className="title">
+              {item.name}
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+
+     <style>{`
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  animation: marquee-x 18s linear infinite;
+}
+
+@keyframes marquee-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+
+/* MOBILE CAROUSEL */
+
+.mobile-carousel{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  .desktop-marquee{
+    display:none;
+  }
+
+  .mobile-carousel{
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+    padding:20px;
+    scroll-snap-type:x mandatory;
+
+    /* hide scrollbar */
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+
+  .mobile-carousel::-webkit-scrollbar{
+    display:none;
+  }
+
+  .carousel-item{
+    flex:0 0 auto;
+    scroll-snap-align:center;
+    position:relative;
+  }
+
+  .carousel-img{
+    height:320px;
+    width:240px;
+    object-fit:contain;
+  }
+
+  .title{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    font-weight:bold;
+    background:rgba(0,0,0,0.4);
+    padding:6px 12px;
+    border-radius:6px;
+  }
+
+}
+
+`}</style>
+
     </div>
   );
 }
