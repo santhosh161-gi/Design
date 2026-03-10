@@ -7,7 +7,7 @@ const stories = [
     id: 1,
     date: "Aug 22, 2023",
     title: "Premium Supima Cotton T-Shirt Manufacturer in India",
-    category: "Technology",
+    category: "Supima",
     image: "/cotton1.jpg",
     fabric:"Supima Cotton "
   },
@@ -15,7 +15,7 @@ const stories = [
     id: 2,
     date: "July 13, 2023",
     title: "GOTS-Certified Organic Cotton Clothing Manufacturer In India",
-    category: "Design",
+    category: "Organic",
     image: "/cotton2.webp",
     fabric:"Organic Cotton"
   },
@@ -23,7 +23,7 @@ const stories = [
     id: 3,
     date: "June 02, 2023",
     title: "High-Quality Bamboo Cotton Clothing Manufacturer In India",
-    category: "Photography",
+    category: "Bamboo",
     image: "/cotton3.webp",
     fabric:"Bamboo Cotton"
   },
@@ -31,7 +31,7 @@ const stories = [
     id: 4,
     date: "May 18, 2023",
     title: "Suvin Cotton T-Shirt Manufacturer in India",
-    category: "Branding",
+    category: "Suvin",
     image: "/cotton4.webp",
     fabric:"Suvin Cotton"
   },
@@ -39,7 +39,7 @@ const stories = [
     id: 5,
     date: "April 25, 2023",
     title: "Luxurious Australian Cotton Apparel Manufacturer In India",
-    category: "Technology",
+    category: "Australian",
     image: "/cotton5.webp",
     fabric:"Australian Cotton"
   },
@@ -47,14 +47,14 @@ const stories = [
     id: 6,
     date: "March 10, 2023",
     title: "Premium Tencel Lyocell Clothing Manufacturer In India",
-    category: "Technology",
+    category: "Tencel",
     image: "/cotton5.webp",
     fabric:"Premium Tencel Lyocell"
   },{
     id: 7,
     date: "February 05, 2023",
     title: "Premium Mercerized Cotton T-Shirts Manufacturer In India",
-    category: "Technology",
+    category: "High-Quality",
     image: "/cotton6.webp",
     fabric:"Premium Mercerized Cotton"
   }
@@ -202,7 +202,7 @@ function Card({ story, index, total }) {
           </span>
 
           {/* Top-right: date */}
-          <span style={{
+          {/* <span style={{
             gridRow: 1, gridColumn: 2,
             fontFamily: "'Barlow Condensed', sans-serif",
             fontWeight: 700,
@@ -212,7 +212,7 @@ function Card({ story, index, total }) {
             alignSelf: "start",
           }}>
             {story.date}
-          </span>
+          </span> */}
 
           {/* Bottom-left: big title */}
           <p style={{

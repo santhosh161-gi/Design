@@ -35,7 +35,7 @@ function Pattern() {
                 }}
               />
 
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xl font-bold bg-black/40 px-3 py-1 rounded">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xl font-bold bg-black/40 px-3 py-1 rounded  ">
                 {item.name}
               </div>
 

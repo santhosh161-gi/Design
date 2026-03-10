@@ -147,6 +147,7 @@ export default function Carousel() {
           align-items: center;
           min-height: clamp(200px, 26vw, 360px);
           line-clamp: 4;
+          opacity: 0.7;
         }
 
         .t-quote {
