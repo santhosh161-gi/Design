@@ -86,8 +86,17 @@ export default function Carousel() {
         .t-header h2 {
           font-family: 'Barlow Condensed', sans-serif;
           font-weight: 800;
-          font-size: clamp(3rem, 5vw, 3rem);
+          font-size: clamp(2rem, 5vw, 2.5rem);
           color:#f0ece3;
+          line-height: 1.05;
+          max-width: 700px;
+          margin-bottom: 0.75rem;
+        }
+           .t-header h1 {
+          font-family: 'Barlow Condensed', sans-serif;
+          font-weight: 800;
+          font-size: clamp(3rem, 5vw, 5rem);
+          color:white;
           line-height: 1.05;
           max-width: 700px;
           margin-bottom: 0.75rem;
@@ -146,14 +155,14 @@ export default function Carousel() {
           display: flex;
           align-items: center;
           min-height: clamp(200px, 26vw, 360px);
-          line-clamp: 4;
+          line-clamp: 7;
           opacity: 0.7;
         }
 
         .t-quote {
           font-family: 'Barlow Condensed', sans-serif;
           font-weight: 800;
-          font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+          font-size: clamp(1.4rem, 2.6vw, 1rem);
           text-transform: uppercase;
           color: #f0ece3;
           line-height: 1.15;
@@ -243,10 +252,15 @@ export default function Carousel() {
         }
       `}</style>
 
-      <div className="testimonial-section">
+      <div className="testimonial-section flex flex-col items-center justify-center">
+         <div className="t-header h1">
+        <div className="text-white font-bold uppercase w-full text-left mb-10 ">
+          <h1>Our Core Capabilities</h1>
+          </div>
+        </div>
 
         {/* PREV */}
-        <button className="nav-btn left" onClick={prev}>PR<br/>EV</button>
+        <button className="nav-btn left " onClick={prev}>PR<br/>EV</button>
 
         <div className="testimonial-inner">
 
