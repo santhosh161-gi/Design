@@ -11,8 +11,9 @@ function Pattern() {
     { img: "/Shorts.jpg", name: "Shorts" },
     { img: "/Sweat Shirts.jpg", name: "Sweat Shirts" },
     { img: "/Track Pants.jpg", name: "Track Pants" },
-    { img: "/Co Ord Sets for Women.png", name: "Women Wear" },
-    { img: "/T-Shirts.png", name: "T-Shirts" },
+    { img: "/Co Ord Sets for Women.jpg", name: "Women Wear" },
+    { img: "/T-Shirts.jpg", name: "T-Shirts" },
+    
   ];
 
   const loopItems = [...items, ...items];
@@ -21,8 +22,8 @@ function Pattern() {
     <div className="relative">
 
       {/* ---------- DESKTOP MARQUEE ---------- */}
-      <div className="w-full overflow-hidden py-10">
-        <div className="marquee-track">
+      <div className="desktop-marquee w-full overflow-hidden py-10">
+        <div className="marquee-track"  style={{ animationDuration: "6s" }}>
 
           {loopItems.map((item, i) => (
             <div key={i} className="relative flex-shrink-0">
@@ -32,12 +33,12 @@ function Pattern() {
                 alt={item.name}
                 style={{
                   height: "clamp(250px, 40vh, 500px)",
-                  width: "clamp(180px, 25vw, 300px)",
+                 width: "300px",
                   objectFit: "contain"
                 }}
               />
 
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xl font-bold bg-black/40 px-3 py-1 rounded  ">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xl font-bold bg-black/40 px-3 py-1 rounded">
                 {item.name}
               </div>
 
@@ -70,25 +71,29 @@ function Pattern() {
       </div>
 
 
-     <style>{`
+<style>{`
 
-.marquee-track {
-  display: flex;
-  gap: 20px;
-  animation: marquee-x 25s linear infinite;
+/* DESKTOP MARQUEE */
+
+.marquee-track{
+  display:flex;
+  gap:20px;
+  animation: marquee-x 3s linear infinite;
+  will-change: transform;
+  width: max-content;
 }
 
-@keyframes marquee-x {
-  0% {
-    transform: translateX(-50%);
+@keyframes marquee-x{
+  0%{
+    transform:translateX(0);
   }
-  100% {
-    transform: translateX(0%);
+  100%{
+    transform:translateX(-50%);
   }
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+.marquee-track:hover{
+  animation-play-state:paused;
 }
 
 
@@ -111,7 +116,6 @@ function Pattern() {
     padding:20px;
     scroll-snap-type:x mandatory;
 
-    /* hide scrollbar */
     scrollbar-width:none;
     -ms-overflow-style:none;
   }
