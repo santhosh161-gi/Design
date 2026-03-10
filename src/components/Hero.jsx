@@ -5,116 +5,51 @@ import Button from '../animation/Button';
 function Hero  (){
   return (
     <div className='bg-black'>
-      <div className="relative flex items-center justify-between h-[100svh] px-4 md:px-10 overflow-hidden bg-black pt-16 md:pt-20">
-        
-       <div className='scroll-container opacity-20'>
-            <div className='text-[140px] md:text-[360px] lg:text-[600px] flex font-semibold text-white tracking-tight'>
-            <div>H</div>
-            <div>E</div>
-            <div>M</div>
-            <div>E</div>
-            <div>O</div>
-            <div>L</div>
-            <div>O</div>
-            </div>
-            <div className='text-[140px] md:text-[360px] lg:text-[600px] flex font-semibold text-white tracking-tight'>
-            <div>C</div>
-            <div>O</div>
-            <div>T</div>
-            <div>T</div>
-            <div>O</div>
-            <div>N</div>
-            </div>
+      <div className='flex items-center justify-center'>
+     <div className="flex flex-col lg:flex-row items-center justify-center bg-black px-4 md:px-10 pt-20 lg:pt-32 gap-10">
 
-            <div className='text-[140px] md:text-[360px] lg:text-[600px] flex font-semibold text-white tracking-tight'>
-            <div>H</div>
-            <div>E</div>
-            <div>M</div>
-            <div>E</div>
-            <div>O</div>
-            <div>L</div>
-            <div>O</div>
-            </div>
-            <div className='text-[140px] md:text-[360px] lg:text-[600px] flex font-semibold text-white tracking-tight'>
-            <div>C</div>
-            <div>O</div>
-            <div>T</div>
-            <div>T</div>
-            <div>O</div>
-            <div>N</div>
-            </div>
-       </div>
-       <div className='absolute top-50 transform -translate-y-1/2'>
-          <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          >
-          <p className= 'bg-gradient-to-r from-white/10 to-white bg-clip-text text-transparent opacity-80 text-[40px] md:text-[60px] lg:text-[70px] sm:text-[60px] font-semibold uppercase'>THE TWIN TO YOUR SKIN</p>
-          <p className='text-white opacity-40 text-[20px] md:text-[30px] lg:text-[30px] sm:text-[30px] font-semibold uppercase '>HEMELO COTTON</p>
-          </motion.div>
-        </div>
-      <div className="absolute inset-0 flex flex-col lg:flex-row md:flex-row
-                items-center justify-center 
-                gap-4 sm:gap-6 md:gap-10 px-4 ">
+      {/* TEXT SECTION */}
+      <motion.div
+        initial={{ opacity: 0, x: -200 }}   // left → right
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-[800px] text-left"
+      >
+        <p className="text-white opacity-90 text-[22px] sm:text-[28px] md:text-[36px] lg:text-[45px] font-semibold uppercase leading-snug">
+          Enterprise-Grade T-Shirt Manufacturer in India – Trusted by
+          Microsoft, Coca-Cola & 200+ Global Brands
+        </p>
 
-  {/* LEFT IMAGE WRAPPER (relative for absolute text) */}
-  <div className="relative">
+        <p className="text-white opacity-50 mt-4 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] uppercase leading-relaxed">
+          Varthagam International is your strategic partner for large-scale,
+          premium T-shirt manufacturing in India. We specialize in custom
+          T-shirt production, private label apparel, bulk orders, and
+          corporate clothing solutions. Trusted by Fortune 500 companies,
+          global organizations, and thousands of clothing brands across
+          20 countries.
+        </p>
+      </motion.div>
 
-    <motion.img
-      initial={{ opacity: 0, y: 200 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      src="/model.png"
-      alt=""
-      className="
-               w-full
-  max-w-[400px]
-  h-auto
-  lg:h-[800px]
-  object-cover
-  mt-20
- "
-    />
+      {/* IMAGE SECTION */}
+      <motion.div
+        initial={{ opacity: 0, y: 180 }}   // bottom → top
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="w-full flex justify-center"
+      >
+        <img
+          src="/hero.jpg"
+          alt="hero"
+          className="w-full max-w-[420px] md:max-w-[500px] lg:max-w-[550px] h-auto lg:h-[700px] object-cover rounded-xl"
+        />
+      </motion.div>
 
-    {/* TEXT ABSOLUTE TO FIRST IMAGE */}
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.8 }}
-      className="absolute -bottom-20 lg:bottom-30 md:bottom-20 lg:left-70 md:left-50
-                 text-white/80 uppercase font-bold
-                 text-[25px] sm:text-[30px] md:text-[30px] lg:text-[30px]
-                 space-y-2 z-100 border-none w-[400px]"
-    >
-      <div>#Enterprise-Grade T-Shirt Manufacturer in India</div>
-      <div>#Trusted by 200+ Global Brands</div>
-      
-    </motion.div>
+     </div>
+     </div>
 
-  </div>
-
-  {/* RIGHT IMAGE */}
-  {/* <motion.img
-    initial={{ opacity: 0, y: 200 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, delay: 1 }}
-    src="/person2.webp"
-    alt=""
-    className=" rounded-2xl 
-               w-60 sm:w-60 md:w-72 lg:w-[400px]
-               h-[250px] sm:h-[300px] md:h-[450px] lg:h-[650px]
-               object-cover overflow-hidden"
-  /> */}
-  {/* <div className='absolute insert-0 right-0 bottom-3 md:bottom-10 sm:bottom-5 lg:bottom-10 pr-5'> 
-    <Button/>
-  </div> */}
-
-</div>
-      </div>  
-
-        <div className=" px-4 md:px-10 md:ml-10">
+  <div className=" px-4 md:px-10 md:ml-10">
   <div className="bg-black min-h-screen px-6 md:px-12 lg:px-24 py-2 md:py-20">
 
     {/* Responsive Flex */}
@@ -177,17 +112,17 @@ function Hero  (){
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
-            <button className="bg-white/50 text-black hover:text-white hover:bg-white/70 
+            <p className="bg-white text-black hover:text-white hover:bg-white/50 
                                px-8 py-3 uppercase text-sm font-bold 
                                 transition-all duration-300 border-none">
              Talk to Sales Expert
-            </button>
+            </p>
 
-            <button className="bg-white text-black hover:text-white hover:bg-white/50 
+            <p className="bg-white text-black hover:text-white hover:bg-white/50 
                                px-8 py-3 uppercase text-sm font-bold 
                               transition-all duration-300 border-none">
               Get Sample →
-            </button>
+            </p>
 
           </div>
         </motion.div>
