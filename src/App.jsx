@@ -58,7 +58,7 @@ function HomePage() {
         <Connect />
       </section>
 
-      <Footer />
+    
     </>
   )
 }
