@@ -23,7 +23,9 @@ function Navbar() {
           transition={{ duration: 1 }}
           className='text-white  font-bold text-[30px] flex items-center justify-center gap-2' 
         >
+          <a href="/">
           <img src="/Hemelo Cotton Logo.png" alt="" className='w-[250px]' />
+          </a>
         </motion.div>
         <div className='hidden md:flex items-center gap-12 text-white/60 text-[5px]'>
           <motion.h1

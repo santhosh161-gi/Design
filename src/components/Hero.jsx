@@ -20,8 +20,8 @@ function Hero  (){
         className="max-w-[800px] text-left"
       >
         <p className="text-white opacity-90 text-[22px] sm:text-[28px] md:text-[36px] lg:text-[45px] font-semibold uppercase leading-snug">
-          Enterprise-Grade T-Shirt Manufacturer in India – Trusted by
-          Microsoft, Coca-Cola & 200+ Global Brands
+          Enterprise-Grade Premium T-Shirt Manufacturer in India – Trusted by
+          200+ Global Brands
         </p>
 
         <p className="text-white opacity-50 mt-4 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] uppercase leading-relaxed">

@@ -12,8 +12,7 @@ import Creative from './animation/Creative'
 import Caruosel from './animation/Caruosel'
 import Collections from './animation/Collections'
 import Connect from './animation/Connect'
-
-import SupimaCotton from './pages/SupimaCotton'
+import Knitting from './pages/Knitting'
 
 
 
@@ -67,17 +66,17 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
-
+        <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/supimacotton" element={<SupimaCotton />} />
+        <Route path="/knitting" element={<Knitting />} />
         {/* <Route path="/organiccotton" element={<OrganicCotton />} />
         <Route path="/highqualitybamboocotton" element={<HighQualityBambooCotton />} />
         <Route path="/suvincotton" element={<SUVICotton />} />
         <Route path="/australiancotton" element={<AustralianCotton />} />
         <Route path="/premiumtencellyocell" element={<PremiumTenCelllyOCell />} />
         <Route path="/premiummercerizedcotton" element={<PremiumMercerizedCotton />} /> */}
-      </Routes>
+      </Routes> 
 
     </BrowserRouter>
   )

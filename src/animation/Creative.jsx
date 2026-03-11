@@ -1,30 +1,39 @@
 "use client"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
     id: "creative",
     label: "Knitting Structure",
-    image:
-      "/print2.jpg",
+    image: "/print2.jpg",
   },
   {
     id: "social",
     label: "Fabric Finishing",
-    image:
-      "/print3.jpg",
+    image: "/print3.jpg",
   },
   {
     id: "rebranding",
     label: "Customization",
-    image:
-      "print4.jpg",
+    image: "/print4.jpg",
   },
- 
 ];
 
 export default function Creative() {
-  const [active, setActive] = useState("creative");
+
+  const [active, setActive] = useState("");
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+
+    setActive(id);
+
+    if (id === "creative") navigate("/knitting");
+    else if (id === "social") navigate("/organiccotton");
+    else if (id === "rebranding") navigate("/highqualitybamboocotton");
+
+  };
 
   return (
     <>
@@ -72,6 +81,9 @@ export default function Creative() {
         .menu-item.active {
           color: white;
         }
+          .menu-item:hover {
+            color: white;
+          }
 
         .menu-item::after {
           content: '';
@@ -84,8 +96,12 @@ export default function Creative() {
           transition: width 0.4s ease;
         }
 
-        .menu-item.active::after {
+        
+
+        /* 👇 Hover underline */
+        .menu-item:hover::after {
           width: 100%;
+          
         }
 
         .image-panel {
@@ -141,14 +157,12 @@ export default function Creative() {
           margin-left: 3px;
         }
 
-        /* Tablet */
         @media (max-width: 1024px) {
           .creative-inner {
             gap: 3rem;
           }
         }
 
-        /* Mobile */
         @media (max-width: 768px) {
           .creative-inner {
             flex-direction: column;
@@ -180,7 +194,6 @@ export default function Creative() {
           }
         }
 
-        /* Small Mobile */
         @media (max-width: 480px) {
           .menu-item {
             font-size: 1.5rem;
@@ -196,18 +209,19 @@ export default function Creative() {
         <div className="creative-inner">
 
           {/* Left Menu */}
-          <div className="menu">
-            {services.map((s) => (
-              <div
-                key={s.id}
-                className={`menu-item ${active === s.id ? "active" : ""}`}
-                onClick={() => setActive(s.id)}
-              >
-                {s.label}
-              </div>
-            ))}
-          </div>
-
+         
+<div className="menu">
+  {services.map((s) => (
+    <div
+      key={s.id}
+      className={`menu-item ${active === s.id ? "active" : ""}`}
+      onMouseEnter={() => setActive(s.id)}   // change image on hover
+      onClick={() => handleClick(s.id)}      // navigate on click
+    >
+      {s.label}
+    </div>
+  ))}
+</div>
           {/* Right Image */}
           <div className="image-panel">
             {services.map((s) => (
