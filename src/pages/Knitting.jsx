@@ -66,6 +66,7 @@ const stories=[
     img:"/knitting10.jpg",
   }
 ]
+
 function useScrollProgress(ref) {
   const [progress, setProgress] = useState(0);
 
@@ -76,7 +77,6 @@ function useScrollProgress(ref) {
     const onScroll = () => {
       const rect = el.getBoundingClientRect();
       const winH = window.innerHeight;
-      // 0 = just entered viewport bottom, 1 = just left viewport top
       const p = 1 - (rect.bottom / (winH + rect.height));
       setProgress(Math.min(1, Math.max(0, p)));
     };
@@ -88,12 +88,14 @@ function useScrollProgress(ref) {
 
   return progress;
 }
+
 function Card({ story, index, total }) {
+
   const ref = useRef(null);
   const progress = useScrollProgress(ref);
   const [hovered, setHovered] = useState(false);
- 
-  const stickyTop = `calc(clamp(64px, 10vw, 120px) + ${index * 16}px)`;
+
+  const stickyTop = `calc(clamp(70px, 12vw, 130px) + ${index * 14}px)`;
 
   const scale = 1 - (progress * 0.06);
   const opacity = progress > 0.85 ? 1 - ((progress - 0.85) / 0.15) : 1;
@@ -110,7 +112,6 @@ function Card({ story, index, total }) {
       }}
     >
       <div
-      //  onClick={handleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
@@ -122,14 +123,14 @@ function Card({ story, index, total }) {
           overflow: "hidden",
           position: "relative",
           cursor: "pointer",
-          boxShadow: "0 30px 80px rgba(36, 37, 37, 0.35)",
-          height: "clamp(340px, 55vh, 580px)",
+          height: "clamp(300px,65vh,580px)",
           background: "#111",
-          width: "50%",
+          width: "clamp(320px,90vw,900px)",
           margin: "0 auto",
         }}
       >
-        {/* Parallax image */}
+
+        {/* IMAGE */}
         <div
           style={{
             position: "absolute",
@@ -153,101 +154,65 @@ function Card({ story, index, total }) {
           />
         </div>
 
-        {/* Blue-grey tint */}
+        {/* overlay */}
         <div style={{
-          position: "absolute", inset: 0,
-          background: "rgba(70,100,115,0.2)",
-          pointerEvents: "none",
-        }} />
+          position:"absolute",
+          inset:0,
+          background:"rgba(70,100,115,0.2)"
+        }}/>
 
-        {/* Content overlay */}
+        {/* CONTENT */}
         <div style={{
-          position: "absolute", inset: 0,
-          padding: "clamp(1.2rem, 3vw, 2rem)",
-          display: "grid",
-          gridTemplateRows: "auto 1fr auto",
-          gridTemplateColumns: "1fr auto",
-          color: "#f0ece3",
+          position:"absolute",
+          inset:0,
+          padding:"clamp(1rem,3vw,2rem)",
+          display:"grid",
+          gridTemplateRows:"auto 1fr auto",
+          gridTemplateColumns:"1fr auto",
+          color:"#f0ece3"
         }}>
 
-          {/* Top-left: title */}
           <span style={{
-            gridRow: 1, gridColumn: 1,
-            fontFamily: "'Barlow Condensed', sans-serif",
-            fontWeight: 700,
-            fontSize: "clamp(0.8rem, 1.8vw, 2rem)",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            alignSelf: "start",
+            gridRow:1,
+            gridColumn:1,
+            fontWeight:700,
+            fontSize:"clamp(1rem,2vw,2rem)",
+            textTransform:"uppercase",
+            letterSpacing:"0.1em"
           }}>
             {story.title}
           </span>
 
-          {/* Top-right: date */}
-          {/* <span style={{
-            gridRow: 1, gridColumn: 2,
-            fontFamily: "'Barlow Condensed', sans-serif",
-            fontWeight: 700,
-            fontSize: "clamp(0.8rem, 1.8vw, 1.1rem)",
-            letterSpacing: "0.05em",
-            opacity: 0.75,
-            alignSelf: "start",
-          }}>
-            {story.date}
-          </span> */}
-
-          {/* Bottom-left: big title */}
           <p style={{
-            gridRow: 3, gridColumn: 1,
-            fontFamily: "'Barlow Condensed', sans-serif",
-            fontWeight: 500,
-            fontSize: "clamp(1.6rem, 3vw, 1.1rem)",
-            textTransform: "uppercase",
-            letterSpacing: "0.01em",
-            lineHeight: 0.92,
-            alignSelf: "end",
-            maxWidth: "80%",
+            gridRow:3,
+            gridColumn:1,
+            fontSize:"clamp(0.9rem,2.2vw,1.1rem)",
+            lineHeight:1.4,
+            maxWidth:"90%",
+            alignSelf:"end",
             transform: hovered ? "translateY(-4px)" : "translateY(0)",
-            transition: "transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94)",
+            transition:"0.5s"
           }}>
             {story.cont}
           </p>
 
-          {/* Bottom-right: tag + arrow */}
           <div style={{
-            gridRow: 3, gridColumn: 2,
-            alignSelf: "end",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
-            gap: "0.5rem",
+            gridRow:3,
+            gridColumn:2,
+            alignSelf:"end"
           }}>
-            {/* <span style={{
-              border: "1.5px solid rgba(240,236,227,0.55)",
-              color: "#f0ece3",
-              fontSize: "0.65rem",
-              fontWeight: 600,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              padding: "0.28rem 0.7rem",
-              borderRadius: "2px",
-              background: "rgba(240,236,227,0.08)",
-              backdropFilter: "blur(6px)",
-              fontFamily: "'Barlow', sans-serif",
-            }}>
-              {story.category}
-            </span> */}
-
-            {/* Arrow — fades in on hover */}
             <div style={{
-              width: "2.2rem", height: "2.2rem",
-              border: "1.5px solid rgba(240,236,227,0.45)",
-              borderRadius: "50%",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "0.9rem", color: "#f0ece3",
+              width:"2.2rem",
+              height:"2.2rem",
+              border:"1.5px solid rgba(240,236,227,0.45)",
+              borderRadius:"50%",
+              display:"flex",
+              alignItems:"center",
+              justifyContent:"center",
+              fontSize:"0.9rem",
               opacity: hovered ? 1 : 0,
-              transform: hovered ? "translateY(0) rotate(0deg)" : "translateY(8px) rotate(-45deg)",
-              transition: "opacity 0.4s ease, transform 0.4s ease",
+              transform: hovered ? "translateY(0)" : "translateY(8px)",
+              transition:"0.4s"
             }}>
               ↗
             </div>
@@ -255,21 +220,19 @@ function Card({ story, index, total }) {
 
         </div>
 
-        {/* Index number */}
+        {/* INDEX */}
         <div style={{
-          position: "absolute",
-          top: "clamp(1.2rem, 3vw, 2rem)",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontFamily: "'Barlow Condensed', sans-serif",
-          fontSize: "0.6rem",
-          fontWeight: 700,
-          letterSpacing: "0.25em",
-          textTransform: "uppercase",
-          color: "rgba(240,236,227,0.35)",
+          position:"absolute",
+          top:"clamp(1rem,3vw,2rem)",
+          left:"50%",
+          transform:"translateX(-50%)",
+          fontSize:"0.7rem",
+          letterSpacing:"0.25em",
+          color:"rgba(240,236,227,0.35)"
         }}>
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </div>
+
       </div>
     </div>
   );
@@ -278,73 +241,70 @@ function Card({ story, index, total }) {
 export default function Knitting (){
   return (
     <div className='bg-black'>
-        <div className='flex items-center justify-center h-[100vh]'>
-        <div className="flex flex-col lg:flex-row items-center justify-center  px-4 md:px-10 pt-30 lg:pt-32 gap-10">
 
-          {/* TEXT SECTION */}
+      {/* HERO */}
+      <div className='flex items-center justify-center min-h-[100vh]'>
+
+        <div className="flex flex-col lg:flex-row items-center justify-center px-4 md:px-10 pt-24 lg:pt-32 gap-8">
+
+          {/* TEXT */}
           <motion.div
-            initial={{ opacity: 0, x: -200 }}   // left → right
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity:0, x:-200 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:0.8 }}
             className="max-w-[800px] text-left"
           >
-            <p className="text-white opacity-90 text-[28px] sm:text-[28px] md:text-[36px] lg:text-[50px] font-semibold uppercase leading-snug">
+
+            <p className="text-white text-[28px] sm:text-[30px] md:text-[40px] lg:text-[60px] font-semibold uppercase">
               Types of Knitting Structure
             </p>
 
-            <p className="text-white opacity-50 mt-4 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] uppercase leading-relaxed">
-            At Varthagam International, we specialize in sourcing and manufacturing premium brand products and merchandise, offering an extensive range of knitting structures to meet your unique needs. Beyond the fabrics detailed below, our expertise ensures that your custom apparel and textiles are crafted with precision and quality, delivering exceptional results for your brand.
+            <p className="text-white opacity-50 mt-4 text-[13px] sm:text-[15px] md:text-[16px] lg:text-[18px] uppercase leading-relaxed">
+            At Hemelo Global Knitting, we specialize in sourcing and manufacturing premium brand products and merchandise, offering an extensive range of knitting structures to meet your unique needs. Beyond the fabrics detailed below, our expertise ensures that your custom apparel and textiles are crafted with precision and quality, delivering exceptional results for your brand.
             </p>
-            {/* <h2 className="text-white opacity-90 text-[22px] sm:text-[28px] md:text-[36px] lg:text-[45px] font-semibold uppercase leading-snug mt-8">
-              who are you?
-            </h2> */}
-            <div className="flex flex-row  sm:flex-row md:flex-row lg:flex-row gap-4 mt-4  items-start ">
 
-                <p className="bg-white text-black hover:text-white hover:bg-white/50 
-                                  px-8 py-3 uppercase text-sm font-bold 
-                                    transition-all duration-300 border-none">
+            <div className="flex flex-wrap gap-4 mt-6">
+
+              <p className="bg-white text-black px-8 py-3 uppercase text-sm font-bold  cursor-pointer hover:bg-black hover:text-white transition-all duration-300">
                 Talk to Manufacturing Expert
-                </p>
+              </p>
 
-                <p className="bg-white text-black hover:text-white hover:bg-white/50 
-                                  px-8 py-3 uppercase text-sm font-bold 
-                                  transition-all duration-300 border-none">
+              <p className="bg-white text-black px-8 py-3 uppercase text-sm font-bold cursor-pointer hover:bg-black hover:text-white transition-all duration-300">  
                 Get Sample
-                </p>
+              </p>
 
-              </div>
+            </div>
 
           </motion.div>
 
-          {/* IMAGE SECTION */}
+          {/* IMAGE */}
           <motion.div
-            initial={{ opacity: 0, y: 180 }}   // bottom → top
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            initial={{ opacity:0, y:180 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:1 }}
             className="w-full flex justify-center"
           >
             <img
               src="/hero.jpg"
               alt="hero"
-              className="w-full max-w-[420px] md:max-w-[500px] lg:max-w-[550px] h-auto lg:h-[700px] object-cover rounded-xl"
+              className="w-full max-w-[380px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[550px] h-auto lg:h-[650px] object-cover rounded-xl"
             />
           </motion.div>
 
         </div>
-        </div>
-        <div>
-          <Textscroll/>
-        </div>
+      </div>
 
-        <div>
-         <div style={{ position: "relative" }}>
-            {stories.map((story, i) => (
-              <Card key={story.id} story={story} index={i} total={stories.length} />
-            ))}
-          </div>
-        </div>
+      <Textscroll/>
+
+      {/* STACK CARDS */}
+      <div style={{position:"relative"}}>
+        {stories.map((story,i)=>(
+          <Card key={story.id} story={story} index={i} total={stories.length}/>
+        ))}
+      </div>
+
     </div>
   )
 }

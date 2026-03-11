@@ -77,6 +77,7 @@ function App() {
         <Route path="/premiumtencellyocell" element={<PremiumTenCelllyOCell />} />
         <Route path="/premiummercerizedcotton" element={<PremiumMercerizedCotton />} /> */}
       </Routes> 
+      <Footer />
 
     </BrowserRouter>
   )
