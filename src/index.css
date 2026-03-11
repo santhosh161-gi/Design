@@ -80,15 +80,17 @@ button:focus-visible {
 
 }
 .scroll-text{
-  animation: scrollText 18s linear infinite;
+  display: flex;
+  width: max-content;
+  animation: scrollText 30s linear infinite;
 }
 
 @keyframes scrollText{
   0%{
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100%{
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 

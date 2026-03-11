@@ -254,7 +254,7 @@ export default function Carousel() {
 
       <div className="testimonial-section flex flex-col items-center justify-center">
          <div className="t-header h1">
-        <div className="text-white font-bold uppercase w-full text-left mb-10 ">
+        <div className="text-white font-bold uppercase w-full  mb-10  ">
           <h1>Our Core Capabilities</h1>
           </div>
         </div>

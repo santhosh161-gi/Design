@@ -20,12 +20,7 @@ const services = [
     image:
       "print4.jpg",
   },
-  {
-    id: "uiux",
-    label: "Printing",
-    image:
-      "/print.jpg",
-  },
+ 
 ];
 
 export default function Creative() {

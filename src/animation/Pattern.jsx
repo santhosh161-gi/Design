@@ -16,14 +16,14 @@ function Pattern() {
     
   ];
 
-  const loopItems = [...items, ...items];
+  const loopItems = [...items, ...items, ...items];
 
   return (
     <div className="relative">
 
       {/* ---------- DESKTOP MARQUEE ---------- */}
       <div className="desktop-marquee w-full overflow-hidden py-10">
-        <div className="marquee-track"  style={{ animationDuration: "6s" }}>
+        <div className="marquee-track"  style={{ animationDuration: "10s" }}>
 
           {loopItems.map((item, i) => (
             <div key={i} className="relative flex-shrink-0">
@@ -78,7 +78,7 @@ function Pattern() {
 .marquee-track{
   display:flex;
   gap:20px;
-  animation: marquee-x 3s linear infinite;
+  animation: marquee-x 10s linear infinite;
   will-change: transform;
   width: max-content;
 }
@@ -88,7 +88,7 @@ function Pattern() {
     transform:translateX(0);
   }
   100%{
-    transform:translateX(-50%);
+    transform:translateX(-100%);
   }
 }
 
