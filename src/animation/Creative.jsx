@@ -1,37 +1,42 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 
 const services = [
   {
-    id: "creative",
+    id: "Knitting",
     label: "Knitting Structure",
     image: "/print2.jpg",
   },
   {
-    id: "social",
+    id: "FabricFinishing",
     label: "Fabric Finishing",
     image: "/print3.jpg",
   },
   {
-    id: "rebranding",
+    id: "Customization",
     label: "Customization",
     image: "/print4.jpg",
   },
 ];
 
 export default function Creative() {
-
+ 
+ const defaultImage = "/visual.jpg";
   const [active, setActive] = useState("");
+  const [activeImage, setActiveImage] = useState(defaultImage);
   const navigate = useNavigate();
+
+ 
 
   const handleClick = (id) => {
 
     setActive(id);
 
-    if (id === "creative") navigate("/knitting");
-    else if (id === "social") navigate("/organiccotton");
-    else if (id === "rebranding") navigate("/highqualitybamboocotton");
+    if (id === "Knitting") navigate("/knitting");
+    else if (id === "FabricFinishing") navigate("/fabricfinish");
+    else if (id === "Customization") navigate("/customization");
 
   };
 
@@ -214,9 +219,10 @@ export default function Creative() {
   {services.map((s) => (
     <div
       key={s.id}
-      className={`menu-item ${active === s.id ? "active" : ""}`}
-      onMouseEnter={() => setActive(s.id)}   // change image on hover
-      onClick={() => handleClick(s.id)}      // navigate on click
+      className="menu-item"
+      onMouseEnter={() => setActiveImage(s.image)}
+      onMouseLeave={() => setActiveImage(defaultImage)}
+      onClick={() => handleClick(s.id)}
     >
       {s.label}
     </div>
@@ -225,12 +231,11 @@ export default function Creative() {
           {/* Right Image */}
           <div className="image-panel">
             {services.map((s) => (
-              <img
-                key={s.id}
-                src={s.image}
-                alt={s.label}
-                className={active === s.id ? "visible" : ""}
-              />
+             <img
+              src={activeImage}
+              alt="Service"
+              className="visible"
+            />
             ))}
 
             <div className="play-btn">

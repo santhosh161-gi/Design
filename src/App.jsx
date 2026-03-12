@@ -13,6 +13,8 @@ import Caruosel from './animation/Caruosel'
 import Collections from './animation/Collections'
 import Connect from './animation/Connect'
 import Knitting from './pages/Knitting'
+import FabricFinish from './pages/FabricFinish'
+
 
 
 
@@ -70,8 +72,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/knitting" element={<Knitting />} />
-        {/* <Route path="/organiccotton" element={<OrganicCotton />} />
-        <Route path="/highqualitybamboocotton" element={<HighQualityBambooCotton />} />
+        <Route path="/fabricfinish" element={<FabricFinish />} />
+        {/* <Route path="/highqualitybamboocotton" element={<HighQualityBambooCotton />} />
         <Route path="/suvincotton" element={<SUVICotton />} />
         <Route path="/australiancotton" element={<AustralianCotton />} />
         <Route path="/premiumtencellyocell" element={<PremiumTenCelllyOCell />} />

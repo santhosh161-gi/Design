@@ -1,70 +1,90 @@
-
+"use client"
 
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Textscroll from "../animation/Textscroll";
-import Button from "../animation/Button"; 
+import Button from "../animation/Button";
+
+
 
 const stories=[
   {
     id:1,
-    title:"Single Jersey",
-    cont:"Single jersey knit is a versatile and widely used fabric produced on a single-needle bed machine, resulting in a lightweight and stretchy material.",
-    img:"/knitting01.jpg",
+    title:"Bio Wash",
+    cont:"Bio wash, also known as enzyme wash, uses natural enzymes to remove excess fibers and fuzz from fabric, resulting in a smoother, softer surface. ",
+    img:"/fabric01.jpg",
   },
   {
     id:2,
-    title:"Interlock",
-    cont:"Interlock knit fabric is crafted through a double-knit construction, creating a smooth surface on both sides. Thicker and more stable than single jersey, it boasts superior stretch and recovery properties.",
-    img:"/knitting02.jpg",
+    title:"Silicon Wash",
+    cont:"Silicon wash takes fabric softness to the next level by applying silicone-based chemicals during the washing process",
+    img:"/fabric02.jpg",
   },
   {
     id:3,
-    title:"Loop Knit",
-    cont:"Loop knitting produces a textured fabric with a soft, inviting hand feel by incorporating loops on the fabric surface.",
-    img:"/knitting03.jpg",
+    title:"Pre-Shrinkage Wash",
+    cont:"Pre-shrinkage wash is applied to fabrics before they are cut and sewn, minimizing the risk of shrinkage during consumer washes.",
+    img:"/fabric03.jpg",
   },
   {
     id:4,
-    title:"Piqué",
-    cont:"Piqué knit is distinguished by its raised, textured patterns, often resembling a waffle or honeycomb design.",
-    img:"/knitting04.jpg",
+    title:"Mercerization",
+    cont:"Mercerization transforms cotton fabrics or threads by treating them with a caustic soda solution, which swells the fibers to create a smooth, shiny surface.",
+    img:"/fabric04.jpg",                                                                                            
   },
   {
     id:5,
-    title:"Drop Needle",
-    cont:"Drop needle knit employs a technique where specific needles are skipped in certain rows, creating vertical lines or textured patterns with distinctive gaps",
-    img:"/knitting05.jpg",
+    title:" Acid Wash",
+    cont:"Acid wash gives a distinctive faded, distressed look by washing the fabric with chlorine-soaked pumice stones.",
+    img:"/fabric05.jpg",
   },
   {
     id:6,
-    title:"Waffle",
-    cont:"Waffle knit fabric is characterized by its grid-like texture, achieved through a combination of knit and purl stitches",
-    img:"/knitting06.jpg",
+    title:"Perfume Wash",
+    cont:"Perfume wash infuses garments with a lasting fragrance, enhancing the sensory experience while softening the fabric.",
+    img:"/fabric06.jpg",
   },
   {
     id:7,
-    title:"Purl Knit",
-    cont:"Purl knitting involves looping yarn through the backa back of the previous stitch, producing a textured, raised surface on the front of the fabric.",
-    img:"/knitting07.jpg",
+    title:"Antimicrobial Wash",
+    cont:"Antimicrobial wash treats fabrics with agents that inhibit the growth of bacteria, fungi, and microbes, keeping the material fresher for longer. ",
+    img:"/fabric07.jpg",
   },
   {
     id:8,
-    title:"Ottoman",
-    cont:"Ottoman fabric is a robust, heavy textile known for its ribbed texture, created through a tightly woven structure. ",
-    img:"/knitting08.jpg",
+    title:"Stain Repellent Wash",
+    cont:"Stain repellent wash creates a protective barrier on fabrics, preventing liquids and stains from penetrating the fibers. ",
+    img:"/fabric08.jpg",
   },
   {
     id:9,
-    title:"Popcorn",
-    cont:"Popcorn knitting is a distinctive technique that creates small, raised, bobble-like shapes on the fabric surface, resembling popcorn.",
-    img:"/knitting09.jpg",
+    title:"Tie-Dye",
+    cont:"Tie-dye uses a creative dyeing technique where fabric is twisted, folded, or tied before applying dye, resulting in vibrant, unique patterns.",
+    img:"/fabric09.jpg",
   },
   {
     id:10,
-    title:"Jacquard",
-    cont:"Jacquard knitting enables the creation of intricate patterns and designs woven directly into the fabric during the knitting process,.Batch orders or custom designs",
-    img:"/knitting10.jpg",
+    title:"Cold Pigment Wash",
+    cont:"Cold pigment wash achieves a soft, faded, vintage look by using cold water and pigments to slightly distress the fabric.",
+    img:"/fabric10.jpg",
+  },
+  {
+    id:11,
+    title:"Burn Out Wash",
+    cont:"Burn out wash employs chemicals to dissolve specific fibers, leaving behind sheer or semi-transparent patterns.",
+    img:"/fabric11.jpg",
+  },
+  {
+    id:12,
+    title:"Peach Finishing",
+    cont:"Peach finishing, also known as sueding, lightly abrades the fabric’s surface to produce a velvety, peach-like texture.",
+    img:"/fabric12.jpg",
+  },
+  {
+    id:13,
+    title:"Distressing Wash",
+    cont:"Distressing wash intentionally ages fabrics, especially denim, using abrasion, chemical washes, and enzyme treatments to create a faded, frayed look. ",
+    img:"/fabric13.jpg",
   }
 ]
 
@@ -239,8 +259,9 @@ function Card({ story, index, total }) {
   );
 }
 
-export default function Knitting (){
-  useEffect(() => {
+export default function FabricFinish (){
+
+    useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
@@ -261,17 +282,17 @@ export default function Knitting (){
           >
 
             <p className="text-white text-[28px] sm:text-[30px] md:text-[40px] lg:text-[60px] font-semibold uppercase">
-              Types of Knitting Structure
+             Fabric Finishing Techniques for Premium Apparel
             </p>
 
             <p className="text-white opacity-50 mt-4 text-[13px] sm:text-[15px] md:text-[16px] lg:text-[18px] uppercase leading-relaxed">
-            At Hemelo Global Knitting, we specialize in sourcing and manufacturing premium brand products and merchandise, offering an extensive range of knitting structures to meet your unique needs. Beyond the fabrics detailed below, our expertise ensures that your custom apparel and textiles are crafted with precision and quality, delivering exceptional results for your brand.
+           At Hemelo Cotton Global, we specialize in advanced fabric finishing techniques that enhance the quality, comfort, and aesthetic appeal of textiles. Our processes are designed to meet the needs of custom T-shirt printing and apparel manufacturing, ensuring your brand’s products are durable, stylish, and tailored to perfection.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-6">
 
               <p className="bg-white text-black px-8 py-3 uppercase text-sm font-bold  cursor-pointer hover:bg-black hover:text-white transition-all duration-300">
-                Talk to Manufacturing Expert
+                Talk to Sales Expert
               </p>
 
               <p className="bg-white text-black px-8 py-3 uppercase text-sm font-bold cursor-pointer hover:bg-black hover:text-white transition-all duration-300">  
@@ -279,10 +300,11 @@ export default function Knitting (){
               </p>
 
             </div>
-            {/* <div className="pt-5 lg:pt-10 sm:pt-5 md:px-5">
-            <a className="" href="/">
-              <Button/>
-            </a>
+
+             {/* <div className="pt-5 lg:pt-10 sm:pt-5 md:px-5">
+                        <a className="" href="/">
+                          <Button/>
+                        </a>
             </div> */}
 
           </motion.div>
@@ -308,7 +330,7 @@ export default function Knitting (){
       <Textscroll/>
 
       {/* STACK CARDS */}
-      <div style={{position:""}}>
+      <div style={{position:"relative"}}>
         {stories.map((story,i)=>(
           <Card key={story.id} story={story} index={i} total={stories.length}/>
         ))}
@@ -317,5 +339,3 @@ export default function Knitting (){
     </div>
   )
 }
-
-

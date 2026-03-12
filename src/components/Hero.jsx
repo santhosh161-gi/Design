@@ -38,13 +38,13 @@ function Hero  (){
         <div className="flex flex-row  sm:flex-row md:flex-row lg:flex-row gap-4 mt-4  items-start ">
 
             <p className="bg-white text-black hover:text-white hover:bg-white/50 
-                               px-8 py-3 uppercase text-sm font-bold 
+                               px-5 py-2 uppercase text-sm font-bold 
                                 transition-all duration-300 border-none">
             Existing Company
             </p>
 
             <p className="bg-white text-black hover:text-white hover:bg-white/50 
-                               px-8 py-3 uppercase text-sm font-bold 
+                               px-5 py-2 uppercase text-sm font-bold 
                               transition-all duration-300 border-none">
              Startup Brand
             </p>
